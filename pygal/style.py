@@ -476,7 +476,7 @@ class ParametricStyleBase(Style):
             defaults.update(base_style.to_dict())
         defaults.update(kwargs)
 
-        super(ParametricStyleBase, self).__init__(**defaults)
+        super().__init__(**defaults)
 
         if max_ is None:
             violency = {

@@ -199,16 +199,16 @@ class HorizontalView(View):
         if x is None:
             return None
         if self._force_vertical:
-            return super(HorizontalView, self).x(x)
-        return super(HorizontalView, self).y(x)
+            return super().x(x)
+        return super().y(x)
 
     def y(self, y):
         """Project y as x"""
         if y is None:
             return None
         if self._force_vertical:
-            return super(HorizontalView, self).y(y)
-        return super(HorizontalView, self).x(y)
+            return super().y(y)
+        return super().x(y)
 
 
 class PolarView(View):
@@ -219,8 +219,7 @@ class PolarView(View):
         if None in rhotheta:
             return None, None
         rho, theta = rhotheta
-        return super(PolarView,
-                     self).__call__((rho * cos(theta), rho * sin(theta)))
+        return super().__call__((rho * cos(theta), rho * sin(theta)))
 
 
 class PolarLogView(View):
@@ -228,7 +227,7 @@ class PolarLogView(View):
 
     def __init__(self, width, height, box):
         """Create the view with a width an height and a box bounds"""
-        super(PolarLogView, self).__init__(width, height, box)
+        super().__init__(width, height, box)
         if not hasattr(box, '_rmin') or not hasattr(box, '_rmax'):
             raise Exception(
                 'Box must be set with set_polar_box for polar charts'
@@ -246,12 +245,11 @@ class PolarLogView(View):
         rho, theta = rhotheta
         # Center case
         if rho == 0:
-            return super(PolarLogView, self).__call__((0, 0))
+            return super().__call__((0, 0))
         rho = (self.box._rmax - self.box._rmin) * (
             log10(rho) - self.log10_rmin
         ) / (self.log10_rmax - self.log10_rmin)
-        return super(PolarLogView,
-                     self).__call__((rho * cos(theta), rho * sin(theta)))
+        return super().__call__((rho * cos(theta), rho * sin(theta)))
 
 
 class PolarThetaView(View):
@@ -259,7 +257,7 @@ class PolarThetaView(View):
 
     def __init__(self, width, height, box, aperture=pi / 3):
         """Create the view with a width an height and a box bounds"""
-        super(PolarThetaView, self).__init__(width, height, box)
+        super().__init__(width, height, box)
         self.aperture = aperture
         if not hasattr(box, '_tmin') or not hasattr(box, '_tmax'):
             raise Exception(
@@ -275,8 +273,7 @@ class PolarThetaView(View):
         theta = start + (2 * pi - self.aperture) * (theta - self.box._tmin) / (
             self.box._tmax - self.box._tmin
         )
-        return super(PolarThetaView,
-                     self).__call__((rho * cos(theta), rho * sin(theta)))
+        return super().__call__((rho * cos(theta), rho * sin(theta)))
 
 
 class PolarThetaLogView(View):
@@ -284,7 +281,7 @@ class PolarThetaLogView(View):
 
     def __init__(self, width, height, box, aperture=pi / 3):
         """Create the view with a width an height and a box bounds"""
-        super(PolarThetaLogView, self).__init__(width, height, box)
+        super().__init__(width, height, box)
         self.aperture = aperture
         if not hasattr(box, '_tmin') or not hasattr(box, '_tmax'):
             raise Exception(
@@ -302,7 +299,7 @@ class PolarThetaLogView(View):
         rho, theta = rhotheta
         # Center case
         if theta == 0:
-            return super(PolarThetaLogView, self).__call__((0, 0))
+            return super().__call__((0, 0))
         theta = self.box._tmin + (self.box._tmax - self.box._tmin) * (
             log10(theta) - self.log10_tmin
         ) / (self.log10_tmax - self.log10_tmin)
@@ -312,8 +309,7 @@ class PolarThetaLogView(View):
             self.box._tmax - self.box._tmin
         )
 
-        return super(PolarThetaLogView,
-                     self).__call__((rho * cos(theta), rho * sin(theta)))
+        return super().__call__((rho * cos(theta), rho * sin(theta)))
 
 
 class LogView(View):
@@ -401,7 +397,7 @@ class HorizontalLogView(XLogView):
         if x is None:
             return None
         if self._force_vertical:
-            return super(HorizontalLogView, self).x(x)
+            return super().x(x)
         return super(XLogView, self).y(x)
 
     def y(self, y):
@@ -410,4 +406,4 @@ class HorizontalLogView(XLogView):
             return None
         if self._force_vertical:
             return super(XLogView, self).y(y)
-        return super(HorizontalLogView, self).x(y)
+        return super().x(y)

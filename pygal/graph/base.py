@@ -56,7 +56,7 @@ class BaseGraph:
     def __setattr__(self, name, value):
         """Set an attribute on the class or in the state if there is one"""
         if name.startswith('__') or getattr(self, 'state', None) is None:
-            super(BaseGraph, self).__setattr__(name, value)
+            super().__setattr__(name, value)
         else:
             setattr(self.state, name, value)
 
@@ -65,7 +65,7 @@ class BaseGraph:
         if name.startswith('__') or name == 'state' or getattr(
                 self, 'state',
                 None) is None or name not in self.state.__dict__:
-            return super(BaseGraph, self).__getattribute__(name)
+            return super().__getattribute__(name)
         return getattr(self.state, name)
 
     def prepare_values(self, raw, offset=0):

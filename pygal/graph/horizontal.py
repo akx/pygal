@@ -27,7 +27,7 @@ class HorizontalGraph(Graph):
     def __init__(self, *args, **kwargs):
         """Set the horizontal flag to True"""
         self.horizontal = True
-        super(HorizontalGraph, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
     def _post_compute(self):
         """After computations transpose labels"""
@@ -45,7 +45,7 @@ class HorizontalGraph(Graph):
     def _axes(self):
         """Set the _force_vertical flag when rendering axes"""
         self.view._force_vertical = True
-        super(HorizontalGraph, self)._axes()
+        super()._axes()
         self.view._force_vertical = False
 
     def _set_view(self):

@@ -114,7 +114,7 @@ class PygalDirective(Directive):
 
 class PygalWithCode(PygalDirective):
     def run(self):
-        node_list = super(PygalWithCode, self).run()
+        node_list = super().run()
         node_list.extend(
             CodeBlock(
                 self.name, ['python'], self.options, self.content, self.lineno,
@@ -160,7 +160,7 @@ class PygalTable(Directive):
 
 class PygalTableWithCode(PygalTable):
     def run(self):
-        node_list = super(PygalTableWithCode, self).run()
+        node_list = super().run()
         node_list.extend(
             CodeBlock(
                 self.name, ['python'], self.options, self.content, self.lineno,

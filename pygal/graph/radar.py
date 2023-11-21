@@ -36,7 +36,7 @@ class Radar(Line):
     def __init__(self, *args, **kwargs):
         """Init custom vars"""
         self._rmax = None
-        super(Radar, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
     def _fill(self, values):
         """Add extra values to fill the line"""

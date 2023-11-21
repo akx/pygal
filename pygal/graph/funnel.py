@@ -29,7 +29,7 @@ class Funnel(Graph):
 
     def _value_format(self, value):
         """Format value for dual value display."""
-        return super(Funnel, self)._value_format(value and abs(value))
+        return super()._value_format(value and abs(value))
 
     def funnel(self, serie):
         """Draw a funnel slice"""

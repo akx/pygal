@@ -30,7 +30,7 @@ class Line(Graph):
     def __init__(self, *args, **kwargs):
         """Set _self_close as False, it's True for Radar like Line"""
         self._self_close = False
-        super(Line, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
     @cached_property
     def _values(self):

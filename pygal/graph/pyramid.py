@@ -32,7 +32,7 @@ class VerticalPyramid(StackedBar):
 
     def _value_format(self, value):
         """Format value for dual value display."""
-        return super(VerticalPyramid, self)._value_format(value and abs(value))
+        return super()._value_format(value and abs(value))
 
     def _get_separated_values(self, secondary=False):
         """Separate values between odd and even series stacked"""
@@ -83,8 +83,7 @@ class VerticalPyramid(StackedBar):
         """Internal stacking bar drawing function"""
         if serie.index % 2:
             y = -y
-        return super(VerticalPyramid,
-                     self)._bar(serie, parent, x, y, i, zero, secondary)
+        return super()._bar(serie, parent, x, y, i, zero, secondary)
 
 
 class Pyramid(HorizontalGraph, VerticalPyramid):

@@ -32,7 +32,7 @@ class StackedLine(Line):
     def __init__(self, *args, **kwargs):
         """Custom variable initialization"""
         self._previous_line = None
-        super(StackedLine, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
     def _value_format(self, value, serie, index):
         """
@@ -43,14 +43,14 @@ class StackedLine(Line):
                 self.stack_from_top
                 and self.series.index(serie) == self._order - 1
                 or not self.stack_from_top and self.series.index(serie) == 0):
-            return super(StackedLine, self)._value_format(value)
+            return super()._value_format(value)
         return '%s (+%s)' % (self._y_format(sum_), self._y_format(value))
 
     def _fill(self, values):
         """Add extra values to fill the line"""
         if not self._previous_line:
             self._previous_line = values
-            return super(StackedLine, self)._fill(values)
+            return super()._fill(values)
         new_values = values + list(reversed(self._previous_line))
         self._previous_line = values
         return new_values

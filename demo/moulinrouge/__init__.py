@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of pygal
 #
 # A python svg graph plotting library
@@ -39,7 +38,7 @@ def get(type):
 
 
 def random_label():
-    chars = string.ascii_letters + string.digits + u' àéèçêâäëï'
+    chars = string.ascii_letters + string.digits + ' àéèçêâäëï'
     return ''.join([
         random.choice(chars) for i in range(random.randrange(4, 30))
     ])

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of pygal
 #
 # A python svg graph plotting library
@@ -80,7 +79,7 @@ CHARTS_NAMES = list(CHARTS_BY_NAME.keys())
 CHARTS = list(CHARTS_BY_NAME.values())
 
 
-class PluginImportFixer(object):
+class PluginImportFixer:
     """
     Allow external map plugins to be imported from pygal.maps package.
 

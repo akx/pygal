@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of pygal
 #
 # A python svg graph plotting library
@@ -18,7 +17,6 @@
 # along with pygal. If not, see <http://www.gnu.org/licenses/>.
 """Generate tests for different chart types with different data"""
 
-import io
 import os
 import uuid
 
@@ -53,7 +51,7 @@ def test_render_to_file(Chart, datas):
     chart = Chart()
     chart = make_data(chart, datas)
     chart.render_to_file(file_name)
-    with io.open(file_name, encoding="utf-8") as f:
+    with open(file_name, encoding="utf-8") as f:
         assert 'pygal' in f.read()
     os.remove(file_name)
 

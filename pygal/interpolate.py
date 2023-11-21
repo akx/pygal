@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of pygal
 #
 # A python svg graph plotting library
@@ -24,7 +23,6 @@ returns an iterator over the interpolation between all these points
 with `precision` interpolated points between each of them
 
 """
-from __future__ import division
 
 from math import sin
 

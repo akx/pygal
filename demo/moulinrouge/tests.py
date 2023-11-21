@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of pygal
 from datetime import date, datetime
 from random import choice, randint
@@ -258,8 +257,8 @@ def get_test_routes(app):
             human_readable=True
         )
         gauge.title = 'Hello World!'
-        percent_formatter = lambda x: '{:.10g}%'.format(x)
-        dollar_formatter = lambda x: '{:.10g}$'.format(x)
+        percent_formatter = lambda x: f'{x:.10g}%'
+        dollar_formatter = lambda x: f'{x:.10g}$'
         gauge.value_formatter = percent_formatter
 
         gauge.add(
@@ -886,7 +885,7 @@ def get_test_routes(app):
 
     @app.route('/test/interpolate/secondary')
     def test_interpolate_secondary():
-        chart = Line(title=u'Some different points', interpolate='cubic')
+        chart = Line(title='Some different points', interpolate='cubic')
         chart.add('line', [1000, 2000, 7000])
         chart.add('other line', [100, 500, 500], secondary=True)
         chart.range = 0, 10000

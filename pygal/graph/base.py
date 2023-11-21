@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of pygal
 #
 # A python svg graph plotting library
@@ -32,7 +31,7 @@ from pygal.util import compose, ident
 from pygal.view import Box, Margin
 
 
-class BaseGraph(object):
+class BaseGraph:
     """Chart internal behaviour related functions"""
 
     _adapters = []

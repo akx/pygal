@@ -7,6 +7,7 @@ extend-select = [
     "PLE",
     "PLW",
     # "PLR",  # TODO: enable?
+    "UP",
 ]
 
 ignore = [
@@ -14,6 +15,7 @@ ignore = [
     "E741",
     "PLW2901",  # TODO: do not ignore?
     "PLW3301",  # TODO: do not ignore?
+    "UP031",  # TODO: do not ignore?
 ]
 
 [per-file-ignores]

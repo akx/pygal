@@ -3,7 +3,6 @@
 # This test is for us to test whether the none value
 # in the Log graph will be max or not (issue #309)
 
-from __future__ import division
 
 from pygal import Line
 

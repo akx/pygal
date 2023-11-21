@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of pygal
 #
 # A python svg graph plotting library
@@ -18,7 +17,6 @@
 # along with pygal. If not, see <http://www.gnu.org/licenses/>.
 """Various utility functions"""
 
-from __future__ import division
 
 import re
 from decimal import Decimal
@@ -240,7 +238,7 @@ def truncate(string, index):
 
 
 # # Stolen partly from brownie http://packages.python.org/Brownie/
-class cached_property(object):
+class cached_property:
     """Memoize a property"""
 
     def __init__(self, getter, doc=None):

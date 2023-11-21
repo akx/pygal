@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of pygal
 #
 # A python svg graph plotting library
@@ -19,7 +18,6 @@
 """pygal public api functions"""
 
 import base64
-import io
 
 from pygal._compat import is_list_like
 from pygal.graph.base import BaseGraph
@@ -110,7 +108,7 @@ class PublicApi(BaseGraph):
 
     def render_to_file(self, filename, **kwargs):
         """Render the graph, and write it to filename"""
-        with io.open(filename, 'w', encoding='utf-8') as f:
+        with open(filename, 'w', encoding='utf-8') as f:
             f.write(self.render(is_unicode=True, **kwargs))
 
     def render_to_png(self, filename=None, dpi=72, **kwargs):

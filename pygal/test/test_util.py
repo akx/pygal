@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of pygal
 #
 # A python svg graph plotting library
@@ -79,7 +78,7 @@ def test_format():
     with raises(KeyError):
         assert template('foo {{ baz }}') == 'foo baz'
 
-    class Object(object):
+    class Object:
         pass
 
     obj = Object()

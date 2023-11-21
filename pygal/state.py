@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of pygal
 #
 # A python svg graph plotting library
@@ -21,7 +20,7 @@
 from pygal.util import merge
 
 
-class State(object):
+class State:
     """
     Class containing config values
     overriden by chart values

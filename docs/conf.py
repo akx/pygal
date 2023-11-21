@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 #
 # pygal documentation build configuration file, created by
 # sphinx-quickstart on Wed Jul  1 14:31:10 2015.

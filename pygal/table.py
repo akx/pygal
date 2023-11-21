@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of pygal
 #
 # A python svg graph plotting library
@@ -29,7 +28,7 @@ from lxml.html import builder, tostring
 from pygal.util import template
 
 
-class HTML(object):
+class HTML:
     """Lower case adapter of lxml builder"""
 
     def __getattribute__(self, attr):
@@ -37,7 +36,7 @@ class HTML(object):
         return getattr(builder, attr.upper())
 
 
-class Table(object):
+class Table:
     """Table generator class"""
 
     _dual = None

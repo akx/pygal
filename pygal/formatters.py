@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of pygal
 #
 # A python svg graph plotting library
@@ -20,7 +19,6 @@
 Formatters to use with `value_formatter` and `x_value_formatter` configs
 
 """
-from __future__ import division
 
 from datetime import date, datetime, time
 from math import floor, log
@@ -28,7 +26,7 @@ from math import floor, log
 from pygal.util import float_format
 
 
-class Formatter(object):
+class Formatter:
     pass
 
 

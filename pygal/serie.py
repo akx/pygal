@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of pygal
 #
 # A python svg graph plotting library
@@ -21,7 +20,7 @@
 from pygal.util import cached_property
 
 
-class Serie(object):
+class Serie:
     """Serie class containing title, values and the graph serie index"""
 
     def __init__(self, index, values, config, metadata=None):

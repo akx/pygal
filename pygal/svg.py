@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of pygal
 #
 # A python svg graph plotting library
@@ -18,9 +17,7 @@
 # along with pygal. If not, see <http://www.gnu.org/licenses/>.
 """Svg helper"""
 
-from __future__ import division
 
-import io
 import json
 import os
 from datetime import date, datetime
@@ -43,7 +40,7 @@ from pygal.util import (
 nearly_2pi = 2 * pi - .00001
 
 
-class Svg(object):
+class Svg:
     """Svg related methods"""
 
     ns = 'http://www.w3.org/2000/svg'
@@ -110,7 +107,7 @@ class Svg(object):
                 if not os.path.exists(css):
                     css = os.path.join(os.path.dirname(__file__), 'css', css)
 
-                with io.open(css, encoding='utf-8') as f:
+                with open(css, encoding='utf-8') as f:
                     css_text = template(
                         f.read(),
                         style=self.graph.style,
@@ -171,7 +168,7 @@ class Svg(object):
         for js in self.graph.js:
             if js.startswith('file://'):
                 script = self.node(self.defs, 'script', type='text/javascript')
-                with io.open(js[len('file://'):], encoding='utf-8') as f:
+                with open(js[len('file://'):], encoding='utf-8') as f:
                     script.text = f.read()
             else:
                 if js.startswith('//') and self.graph.force_uri_protocol:
@@ -347,13 +344,13 @@ class Svg(object):
                 self.node(
                     serie_node['plot'],
                     'text',
-                    class_='y-{} bound reactive'.format(pos),
+                    class_=f'y-{pos} bound reactive',
                     x=i[0],
                     y=i[1] + 10,
                     attrib={
                         'text-anchor': 'middle'
                     }
-                ).text = '{}'.format(0 if pos == 0 else max_value)
+                ).text = f'{0 if pos == 0 else max_value}'
                 pos += 1
         else:
             middle_radius = .5 * (radius + small_radius)

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of pygal
 #
 # A python svg graph plotting library
@@ -24,7 +23,7 @@ depending on whether lxml is installed or not.
 import os
 
 
-class Etree(object):
+class Etree:
     """Etree wrapper using lxml.etree or standard xml.etree"""
 
     def __init__(self):

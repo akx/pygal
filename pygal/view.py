@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of pygal
 #
 # A python svg graph plotting library
@@ -18,12 +17,11 @@
 # along with pygal. If not, see <http://www.gnu.org/licenses/>.
 """Projection and bounding helpers"""
 
-from __future__ import division
 
 from math import cos, log10, pi, sin
 
 
-class Margin(object):
+class Margin:
     """Class reprensenting a margin (top, right, left, bottom)"""
 
     def __init__(self, top, right, bottom, left):
@@ -44,7 +42,7 @@ class Margin(object):
         return self.top + self.bottom
 
 
-class Box(object):
+class Box:
     """Chart boundings"""
 
     margin = .02
@@ -143,7 +141,7 @@ class Box(object):
             self.ymax += ymargin
 
 
-class View(object):
+class View:
     """Projection base class"""
 
     def __init__(self, width, height, box):

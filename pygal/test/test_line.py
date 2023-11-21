@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of pygal
 #
 # A python svg graph plotting library
@@ -18,7 +17,6 @@
 # along with pygal. If not, see <http://www.gnu.org/licenses/>.
 """Line chart related tests"""
 
-from __future__ import division
 
 from math import cos, sin
 

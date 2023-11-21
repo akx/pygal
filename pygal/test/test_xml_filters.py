@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of pygal
 #
 # A python svg graph plotting library
@@ -21,7 +20,7 @@
 from pygal import Bar
 
 
-class ChangeBarsXMLFilter(object):
+class ChangeBarsXMLFilter:
     """xml filter that insert a subplot"""
 
     def __init__(self, a, b):

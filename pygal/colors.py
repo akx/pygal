@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of pygal
 #
 # A python svg graph plotting library
@@ -22,7 +21,6 @@ This is used by the :py:mod:`pygal.style` package to generate
 parametric styles.
 
 """
-from __future__ import division
 
 
 def normalize_float(f):
@@ -108,9 +106,9 @@ def parse_color(color):
             color = color + 'ff'
         assert len(color) == 8
         type = type or '#rrggbbaa'
-        r, g, b, a = [
+        r, g, b, a = (
             int(''.join(c), 16) for c in zip(color[::2], color[1::2])
-        ]
+        )
         a /= 255
     elif color.startswith('rgb('):
         type = 'rgb'

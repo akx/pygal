@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of pygal_sphinx_directives
 #
 # Pygal sphinx integration

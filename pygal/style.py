@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of pygal
 #
 # A python svg graph plotting library
@@ -18,7 +17,6 @@
 # along with pygal. If not, see <http://www.gnu.org/licenses/>.
 """Charts styling classes"""
 
-from __future__ import division
 
 from itertools import chain
 
@@ -26,7 +24,7 @@ from pygal import colors
 from pygal.colors import darken, is_foreground_light, lighten
 
 
-class Style(object):
+class Style:
     """Styling class containing colors for the css generation"""
 
     plot_background = 'rgba(255, 255, 255, 1)'

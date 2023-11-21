@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # This file is part of pygal
 #
 # A python svg graph plotting library
@@ -28,7 +27,7 @@ CONFIG_ITEMS = []
 callable = type(lambda: 1)
 
 
-class Key(object):
+class Key:
     """
     Represents a config parameter.
 
